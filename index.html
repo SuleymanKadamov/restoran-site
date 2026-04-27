@@ -1,0 +1,2168 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kıztaşı Berceste Patisserie & Cafe - İstanbul Fatih'te taze, zarif ve lezzetli pastane ve kafe deneyimi.">
+<title>Berceste Patisserie & Cafe | İstanbul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF6F0;
+    --beige: #F2E8D9;
+    --warm-tan: #E8D5B8;
+    --brown-light: #C4A882;
+    --brown-mid: #9B7B52;
+    --brown-dark: #6B4F32;
+    --espresso: #3D2B1A;
+    --gold: #C9A84C;
+    --gold-light: #E8C96A;
+    --gold-dark: #A07830;
+    --rose: #D4A0A0;
+    --text-dark: #2C1F0F;
+    --text-mid: #5A3F28;
+    --text-light: #8B6B4A;
+    --white: #FFFDF9;
+    --shadow-soft: 0 4px 24px rgba(61,43,26,0.08);
+    --shadow-card: 0 8px 40px rgba(61,43,26,0.12);
+    --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  body[lang="ar"] {
+    font-family: 'Amiri', serif;
+    direction: rtl;
+  }
+
+  /* ===== NAVBAR ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 0 2rem;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: var(--transition);
+    background: transparent;
+  }
+
+  nav.scrolled {
+    background: rgba(250,246,240,0.97);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 20px rgba(61,43,26,0.08);
+    height: 62px;
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    transition: var(--transition);
+  }
+
+  nav.scrolled .nav-logo { color: var(--espresso); }
+
+  .nav-logo span {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    font-style: italic;
+    opacity: 0.8;
+  }
+
+  .nav-center {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .nav-link {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    transition: var(--transition);
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0; right: 0;
+    height: 1px;
+    background: var(--gold-light);
+    transform: scaleX(0);
+    transition: var(--transition);
+  }
+
+  .nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
+  .nav-link:hover { color: var(--gold-light); }
+
+  nav.scrolled .nav-link { color: var(--text-mid); }
+  nav.scrolled .nav-link:hover { color: var(--gold-dark); }
+  nav.scrolled .nav-link::after { background: var(--gold-dark); }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .lang-switcher {
+    display: flex;
+    gap: 0.4rem;
+    background: rgba(255,255,255,0.12);
+    border-radius: 50px;
+    padding: 4px 8px;
+    transition: var(--transition);
+  }
+
+  nav.scrolled .lang-switcher { background: var(--beige); }
+
+  .lang-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.75);
+    padding: 3px 8px;
+    border-radius: 50px;
+    transition: var(--transition);
+  }
+
+  .lang-btn.active {
+    background: var(--gold);
+    color: var(--espresso);
+  }
+
+  nav.scrolled .lang-btn { color: var(--text-light); }
+  nav.scrolled .lang-btn.active { background: var(--gold-dark); color: var(--white); }
+
+  .nav-instagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px; height: 36px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0;
+  }
+
+  nav.scrolled .nav-instagram { border-color: var(--brown-light); color: var(--brown-mid); }
+
+  .nav-instagram:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--espresso) !important;
+    transform: scale(1.08);
+  }
+
+  .nav-instagram svg { width: 16px; height: 16px; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: white;
+    transition: var(--transition);
+  }
+
+  nav.scrolled .hamburger span { background: var(--espresso); }
+
+  /* Mobile nav */
+  .mobile-menu {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--cream);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+  }
+
+  .mobile-menu.open { opacity: 1; pointer-events: all; }
+
+  .mobile-menu .nav-link {
+    color: var(--espresso);
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+  }
+
+  /* ===== HERO ===== */
+  #home {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-slider {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+    transform: scale(1.04);
+    animation: none;
+  }
+
+  .hero-slide.active {
+    opacity: 1;
+    animation: heroZoom 18s ease-in-out infinite alternate;
+  }
+
+  .hero-slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, rgba(61,43,26,0.72) 0%, rgba(61,43,26,0.45) 50%, rgba(107,79,50,0.6) 100%);
+  }
+
+  .hero-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: white;
+    font-size: 1.2rem;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+  }
+
+  .hero-arrow:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--espresso);
+  }
+
+  .hero-arrow-left { left: 2rem; }
+  .hero-arrow-right { right: 2rem; }
+
+  .hero-dots {
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+  }
+
+  .hero-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.35);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 0;
+  }
+
+  .hero-dot.active {
+    background: var(--gold);
+    transform: scale(1.3);
+  }
+    from { transform: scale(1.04); }
+    to { transform: scale(1.0); }
+  
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(30,15,5,0.5) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    text-align: center;
+    color: var(--white);
+    padding: 2rem;
+    max-width: 820px;
+    animation: heroFadeUp 1.2s ease both;
+  }
+
+  @keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    letter-spacing: 0.25em;
+    color: var(--gold-light);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: heroFadeUp 1.2s ease 0.2s both;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+    opacity: 0;
+    animation: heroFadeUp 1.2s ease 0.4s both;
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: heroFadeUp 1.2s ease 0.55s both;
+  }
+
+  .hero-slogan {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: heroFadeUp 1.2s ease 0.7s both;
+  }
+
+  .hero-slogan span { 
+    opacity: 0.4; 
+    margin: 0 0.5rem;
+    font-weight: 300;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: heroFadeUp 1.2s ease 0.85s both;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 14px 36px;
+    background: var(--gold);
+    color: var(--espresso);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 0;
+    transition: var(--transition);
+    border: 1px solid var(--gold);
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    border-color: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(201,168,76,0.35);
+  }
+
+  .btn-outline {
+    display: inline-block;
+    padding: 14px 36px;
+    background: transparent;
+    color: var(--white);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 0;
+    border: 1px solid rgba(255,255,255,0.5);
+    transition: var(--transition);
+  }
+
+  .btn-outline:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.8);
+    transform: translateY(-2px);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    animation: scrollBounce 2.5s ease-in-out infinite;
+  }
+
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.4));
+  }
+
+  /* ===== SECTION SHARED ===== */
+  section { padding: 6rem 2rem; }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-tag {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    letter-spacing: 0.2em;
+    color: var(--gold-dark);
+    margin-bottom: 0.8rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--espresso);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.2rem auto;
+  }
+
+  .divider-line {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold));
+  }
+
+  .divider-line.rev { background: linear-gradient(to left, transparent, var(--gold)); }
+
+  .divider-diamond {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+
+  .section-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    color: var(--text-light);
+    max-width: 580px;
+    margin: 0 auto;
+    font-style: italic;
+  }
+
+  /* ===== ABOUT ===== */
+  #about {
+    background: var(--white);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .about-images {
+    position: relative;
+    height: 520px;
+  }
+
+  .about-img-main {
+    position: absolute;
+    top: 0; left: 0;
+    width: 75%;
+    height: 85%;
+    object-fit: cover;
+    box-shadow: var(--shadow-card);
+  }
+
+  .about-img-accent {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 55%;
+    height: 55%;
+    object-fit: cover;
+    box-shadow: var(--shadow-card);
+    border: 6px solid var(--cream);
+  }
+
+  .about-gold-badge {
+    position: absolute;
+    bottom: 22%;
+    left: -18px;
+    background: var(--gold);
+    color: var(--espresso);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+    z-index: 2;
+  }
+
+  .about-gold-badge small {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.55rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  
+
+  .about-text p {
+    color: var(--text-mid);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+
+  .about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  .about-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .feature-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--beige);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 15px;
+  }
+
+  .feature-text strong {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--espresso);
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+  }
+
+  .feature-text span {
+    font-size: 0.78rem;
+    color: var(--text-light);
+  }
+
+  /* ===== MENU ===== */
+  #menu { background: var(--cream); }
+
+  .menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .menu-tab {
+    background: transparent;
+    border: 1px solid var(--warm-tan);
+    color: var(--text-light);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 10px 24px;
+    cursor: pointer;
+    transition: var(--transition);
+    border-radius: 0;
+  }
+
+  .menu-tab:hover, .menu-tab.active {
+    background: var(--espresso);
+    border-color: var(--espresso);
+    color: var(--gold-light);
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .menu-card {
+    background: var(--white);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    cursor: default;
+  }
+
+  .menu-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .menu-card-img {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .menu-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .menu-card:hover .menu-card-img img { transform: scale(1.08); }
+
+  .menu-card-body {
+    padding: 1.4rem 1.5rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .menu-item-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--espresso);
+    margin-bottom: 0.3rem;
+  }
+
+  .menu-item-desc {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    line-height: 1.5;
+    max-width: 180px;
+  }
+
+  .menu-item-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+    white-space: nowrap;
+    margin-left: 1rem;
+  }
+
+  .menu-category { display: none; }
+  .menu-category.active { display: grid; }
+
+  /* ===== GALLERY ===== */
+  #gallery {
+    background: var(--espresso);
+    padding: 6rem 2rem;
+  }
+
+  #gallery .section-title { color: var(--white); }
+  #gallery .section-tag { color: var(--gold-light); }
+  #gallery .section-desc { color: rgba(255,255,255,0.6); }
+  #gallery .divider-line { background: linear-gradient(to right, transparent, var(--gold-light)); }
+  #gallery .divider-line.rev { background: linear-gradient(to left, transparent, var(--gold-light)); }
+  #gallery .divider-diamond { background: var(--gold-light); }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .gallery-item {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+  .gallery-item:nth-child(6) { grid-column: span 2; }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    display: block;
+  }
+
+  .gallery-item:hover img { transform: scale(1.1); }
+
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(61,43,26,0.7) 0%, transparent 60%);
+    opacity: 0;
+    transition: var(--transition);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+  }
+
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+  .gallery-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--white);
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== REVIEWS ===== */
+  #reviews { background: var(--beige); }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .review-card {
+    background: var(--white);
+    padding: 2rem;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    transition: var(--transition);
+  }
+
+  .review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .review-quote {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.8rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--gold);
+    opacity: 0.2;
+    line-height: 1;
+  }
+
+  .review-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 1rem;
+    color: var(--gold);
+    font-size: 1rem;
+  }
+
+  .review-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text-mid);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .reviewer-photo {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--warm-tan);
+    flex-shrink: 0;
+  }
+
+  .reviewer-name {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--espresso);
+    letter-spacing: 0.04em;
+  }
+
+  .reviewer-loc {
+    font-size: 0.72rem;
+    color: var(--text-light);
+    margin-top: 1px;
+  }
+
+  /* ===== HOURS ===== */
+  .hours-section {
+    background: var(--white);
+    padding: 5rem 2rem;
+  }
+
+  .hours-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .hours-card {
+    background: var(--cream);
+    padding: 1.8rem 2rem;
+    text-align: center;
+  }
+
+  .hours-day {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .hours-time {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--espresso);
+  }
+
+  .hours-note {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--gold-dark);
+    margin-top: 0.3rem;
+  }
+
+  /* ===== CONTACT ===== */
+  #contact { background: var(--cream); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+
+  .contact-item {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    width: 46px;
+    height: 46px;
+    background: var(--beige);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+    transition: var(--transition);
+  }
+
+  .contact-item:hover .contact-icon {
+    background: var(--gold);
+  }
+
+  .contact-item-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.3rem;
+  }
+
+  .contact-item-value {
+    color: var(--espresso);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  a.contact-item-value:hover { color: var(--gold-dark); }
+
+  .map-link-block {
+    display: block;
+    width: 100%;
+    margin-top: 1.5rem;
+    text-decoration: none;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .map-preview {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, var(--beige) 0%, var(--warm-tan) 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .map-fallback {
+    background: 
+      repeating-linear-gradient(0deg, transparent, transparent 39px, var(--warm-tan) 39px, var(--warm-tan) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, var(--warm-tan) 40px, var(--warm-tan) 41px),
+      var(--beige);
+  }
+
+  .map-overlay-btn {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: rgba(61,43,26,0.55);
+    color: white;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    transition: var(--transition);
+    font-size: 0.85rem;
+  }
+
+  .map-overlay-btn span:first-child { font-size: 2rem; }
+
+  .map-link-block:hover .map-overlay-btn {
+    background: rgba(201,168,76,0.82);
+    color: var(--espresso);
+  }
+
+
+  .form-group { margin-bottom: 1.5rem; }
+
+  .form-label {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .form-input, .form-textarea {
+    width: 100%;
+    background: var(--white);
+    border: 1px solid var(--warm-tan);
+    padding: 12px 16px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    outline: none;
+    transition: var(--transition);
+    border-radius: 0;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .form-input:focus, .form-textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+  }
+
+  .form-textarea { height: 130px; resize: vertical; }
+
+  .btn-submit {
+    width: 100%;
+    background: var(--espresso);
+    color: var(--gold-light);
+    border: none;
+    padding: 15px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .btn-submit:hover {
+    background: var(--brown-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(61,43,26,0.25);
+  }
+
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+    background: var(--white);
+    border: 1px solid var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--espresso);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--espresso);
+    color: rgba(255,255,255,0.7);
+    padding: 4rem 2rem 2rem;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 2rem;
+  }
+
+  .footer-brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.3rem;
+  }
+
+  .footer-brand-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--gold-light);
+    letter-spacing: 0.12em;
+    margin-bottom: 1.2rem;
+  }
+
+  .footer-desc {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    max-width: 280px;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-socials {
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  .footer-social-link {
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0;
+  }
+
+  .footer-social-link:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--espresso) !important;
+  }
+
+  .footer-social-link svg { width: 16px; height: 16px; }
+
+  .footer-col-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 0.7rem; }
+  .footer-links a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: var(--transition);
+    letter-spacing: 0.03em;
+  }
+  .footer-links a:hover { color: var(--gold-light); padding-left: 4px; }
+
+  .footer-contact-item {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+    display: flex;
+    gap: 0.6rem;
+  }
+
+  .footer-contact-icon { opacity: 0.6; flex-shrink: 0; margin-top: 1px; }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.35);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .footer-bottom a { color: var(--gold-light); text-decoration: none; }
+
+  /* ===== WHATSAPP ===== */
+  .whatsapp-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 56px;
+    height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    z-index: 900;
+    transition: var(--transition);
+    text-decoration: none;
+  }
+
+  .whatsapp-btn:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+  }
+
+  .whatsapp-btn svg { width: 28px; height: 28px; fill: white; }
+
+  /* ===== ANIMATIONS ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .nav-center { display: none; }
+    .hamburger { display: flex; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-images { height: 350px; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-item:nth-child(1) { grid-column: span 2; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .hours-inner { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 4rem 1.2rem; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+    .gallery-item:nth-child(6) { grid-column: span 2; }
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    .about-features { grid-template-columns: 1fr; }
+    .menu-grid { grid-template-columns: 1fr; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    nav { padding: 0 1.2rem; }
+  }
+
+  /* RTL adjustments */
+  [dir="rtl"] .divider-line { background: linear-gradient(to left, transparent, var(--gold)); }
+  [dir="rtl"] .divider-line.rev { background: linear-gradient(to right, transparent, var(--gold)); }
+  [dir="rtl"] .footer-links a:hover { padding-left: 0; padding-right: 4px; }
+  [dir="rtl"] .about-images { transform: scaleX(-1); }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">
+    Berceste
+    <span>Patisserie & Cafe</span>
+  </a>
+  <div class="nav-center">
+    <a href="#home" class="nav-link" data-key="nav_home">Ana Sayfa</a>
+    <a href="#about" class="nav-link" data-key="nav_about">Hakkımızda</a>
+    <a href="#menu" class="nav-link" data-key="nav_menu">Menü</a>
+    <a href="#gallery" class="nav-link" data-key="nav_gallery">Galeri</a>
+    <a href="#contact" class="nav-link" data-key="nav_contact">İletişim</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('tr')">TR</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('ar')">AR</button>
+    </div>
+    <a href="https://www.instagram.com/untasi__patisserie" target="_blank" rel="noopener" class="nav-instagram" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" class="nav-link" onclick="closeMobile()" data-key="nav_home">Ana Sayfa</a>
+  <a href="#about" class="nav-link" onclick="closeMobile()" data-key="nav_about">Hakkımızda</a>
+  <a href="#menu" class="nav-link" onclick="closeMobile()" data-key="nav_menu">Menü</a>
+  <a href="#gallery" class="nav-link" onclick="closeMobile()" data-key="nav_gallery">Galeri</a>
+  <a href="#contact" class="nav-link" onclick="closeMobile()" data-key="nav_contact">İletişim</a>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('tr')">TR</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('ar')">AR</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-slider" id="heroSlider">
+    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1800&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1800&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1800&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1551024601-bec78aea704b?w=1800&q=80')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge" data-key="hero_badge">İstanbul, Fatih</div>
+    <h1 class="hero-title">Berceste</h1>
+    <p class="hero-subtitle" data-key="hero_subtitle">Kıztaşı Patisserie & Cafe</p>
+    <p class="hero-slogan" data-key="hero_slogan"><span>✦</span> Taze <span>•</span> Zarif <span>•</span> Lezzetli <span>✦</span></p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-primary" data-key="btn_menu">Menüyü Gör</a>
+      <a href="#contact" class="btn-outline" data-key="btn_contact">İletişim</a>
+    </div>
+  </div>
+  <!-- Slider Controls -->
+  <button class="hero-arrow hero-arrow-left" onclick="changeSlide(-1)" aria-label="Önceki">&#8592;</button>
+  <button class="hero-arrow hero-arrow-right" onclick="changeSlide(1)" aria-label="Sonraki">&#8594;</button>
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" onclick="goSlide(0)"></button>
+    <button class="hero-dot" onclick="goSlide(1)"></button>
+    <button class="hero-dot" onclick="goSlide(2)"></button>
+    <button class="hero-dot" onclick="goSlide(3)"></button>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-images reveal">
+      <img class="about-img-main" src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=800&q=80" alt="Berceste Pastane İç Mekan">
+      <img class="about-img-accent" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" alt="Berceste Kekler">
+      <div class="about-gold-badge">
+        <span>2019</span>
+        <small data-key="badge_since">den beri</small>
+      </div>
+    </div>
+    <div class="about-text reveal">
+      <div class="section-header" style="text-align:left; margin-bottom:2rem;">
+        <span class="section-tag" data-key="about_tag">Hikayemiz</span>
+        <h2 class="section-title" data-key="about_title">Sevgiyle Pişirilen Her Şey</h2>
+        <div class="section-divider" style="justify-content:flex-start;">
+          <div class="divider-line"></div>
+          <div class="divider-diamond"></div>
+        </div>
+      </div>
+      <p data-key="about_p1">İstanbul'un tarihi Fatih ilçesinde, Kıztaşı'nın büyülü atmosferinde doğan Berceste Patisserie & Cafe, 2019 yılından bu yana misafirlerine taze, özenle hazırlanmış lezzetler sunmaktadır.</p>
+      <p data-key="about_p2">Her pasta, her börek, her içecek; taze ve kaliteli malzemelerle, ustanın elleriyle ve içten bir sevgiyle hazırlanmaktadır. Sıcak ortamımızda kendinizi evinizde hissedeceğiniz bir mekân yaratmak için çalışıyoruz.</p>
+      <div class="about-features">
+        <div class="about-feature">
+          <div class="feature-icon">🌿</div>
+          <div class="feature-text">
+            <strong data-key="feat1_title">Taze Malzeme</strong>
+            <span data-key="feat1_desc">Her gün taze ürünler</span>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="feature-icon">👨‍🍳</div>
+          <div class="feature-text">
+            <strong data-key="feat2_title">Usta Eller</strong>
+            <span data-key="feat2_desc">Deneyimli pastacılar</span>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="feature-icon">💛</div>
+          <div class="feature-text">
+            <strong data-key="feat3_title">Samimi Hizmet</strong>
+            <span data-key="feat3_desc">Sıcak ve dost canlısı</span>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="feature-icon">🏆</div>
+          <div class="feature-text">
+            <strong data-key="feat4_title">Premium Kalite</strong>
+            <span data-key="feat4_desc">En yüksek standartlar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="section-header reveal">
+    <span class="section-tag" data-key="menu_tag">Lezzetlerimiz</span>
+    <h2 class="section-title" data-key="menu_title">Menümüz</h2>
+    <div class="section-divider">
+      <div class="divider-line rev"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line"></div>
+    </div>
+    <p class="section-desc" data-key="menu_desc">Her lokmada bir hikaye, her yudumda bir an.</p>
+  </div>
+
+  <div class="menu-tabs reveal">
+    <button class="menu-tab active" onclick="switchTab('cakes')" data-key="tab_cakes">Pastalar</button>
+    <button class="menu-tab" onclick="switchTab('pastries')" data-key="tab_pastries">Börek & Poğaça</button>
+    <button class="menu-tab" onclick="switchTab('desserts')" data-key="tab_desserts">Tatlılar</button>
+    <button class="menu-tab" onclick="switchTab('drinks')" data-key="tab_drinks">İçecekler</button>
+  </div>
+
+  <!-- CAKES -->
+  <div class="menu-category active" id="cat-cakes" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:2rem; max-width:1200px; margin:0 auto;">
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1464195244916-405fa0a82545?w=600&q=80" alt="Çikolatalı Pasta"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name" data-key="cake1">Çikolatalı Ganache Pasta</div><div class="menu-item-desc" data-key="cake1d">Koyu çikolata krem ile</div></div>
+        <div class="menu-item-price">₺195</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80" alt="Fraise Tart"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name" data-key="cake2">Çilek Tart</div><div class="menu-item-desc" data-key="cake2d">Taze çilek ve vanilyalı krem</div></div>
+        <div class="menu-item-price">₺165</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600&q=80" alt="Magnolia Pasta"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name" data-key="cake3">Magnolia Cheesecake</div><div class="menu-item-desc" data-key="cake3d">Baked cheesecake, yaban mersini</div></div>
+        <div class="menu-item-price">₺175</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=600&q=80" alt="Limonlu Pasta"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name" data-key="cake4">Limon Kremalı Pasta</div><div class="menu-item-desc" data-key="cake4d">Hafif ve ferahlatıcı</div></div>
+        <div class="menu-item-price">₺155</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=600&q=80" alt="Red Velvet"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name" data-key="cake5">Red Velvet Pasta</div><div class="menu-item-desc" data-key="cake5d">Cream cheese frosting ile</div></div>
+        <div class="menu-item-price">₺185</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=600&q=80" alt="Frambuazlı Pasta"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name" data-key="cake6">Frambuazlı Mousse</div><div class="menu-item-desc" data-key="cake6d">Hafif mousse, taze frambuaz</div></div>
+        <div class="menu-item-price">₺170</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PASTRIES -->
+  <div class="menu-category" id="cat-pastries" style="display:none; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:2rem; max-width:1200px; margin:0 auto;">
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80" alt="Peynirli Börek"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name" data-key="p1">Peynirli Börek</div><div class="menu-item-desc" data-key="p1d">Ev yapımı yufka, taze beyaz peynir</div></div>
+        <div class="menu-item-price">₺115</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80" alt="Kıymalı Poğaça"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name" data-key="p2">Kıymalı Poğaça</div><div class="menu-item-desc" data-key="p2d">Fırından taze çıkmış</div></div>
+        <div class="menu-item-price">₺75</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&q=80" alt="Ispanaklı Börek"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name" data-key="p3">Ispanaklı Börek</div><div class="menu-item-desc" data-key="p3d">Taze ıspanak ve lor peyniri</div></div>
+        <div class="menu-item-price">₺85</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600&q=80" alt="Zeytinli Poğaça"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name" data-key="p4">Zeytinli Poğaça</div><div class="menu-item-desc" data-key="p4d">Siyah zeytin ve susam</div></div>
+        <div class="menu-item-price">₺50</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1598373182133-52452f7691ef?w=600&q=80" alt="Patatesli Börek"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name" data-key="p5">Patatesli Börek</div><div class="menu-item-desc" data-key="p5d">Baharatlı patates, taze nane</div></div>
+        <div class="menu-item-price">₺80</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80" alt="Sigara Böreği"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name" data-key="p6">Sigara Böreği (6'lı)</div><div class="menu-item-desc" data-key="p6d">Çıtır yufka, peynir dolgulu</div></div>
+        <div class="menu-item-price">₺95</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESSERTS -->
+  <div class="menu-category" id="cat-desserts" style="display:none; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:2rem; max-width:1200px; margin:0 auto;">
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80" alt="Tiramisu"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name">Tiramisu</div><div class="menu-item-desc" data-key="d1d">Maskarpone & espresso</div></div>
+        <div class="menu-item-price">₺145</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=600&q=80" alt="Profiterol"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name">Profiterol</div><div class="menu-item-desc" data-key="d2d">Çikolata soslu, dondurmalı</div></div>
+        <div class="menu-item-price">₺125</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1488477181228-c84c5e873642?w=600&q=80" alt="Baklava"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name">Fıstıklı Baklava</div><div class="menu-item-desc" data-key="d3d">Antep fıstığı, tereyağı</div></div>
+        <div class="menu-item-price">₺110</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&q=80" alt="Panna Cotta"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name">Panna Cotta</div><div class="menu-item-desc" data-key="d4d">Çilek soslu, vanilya kremalı</div></div>
+        <div class="menu-item-price">₺95</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80" alt="Crème Brûlée"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name">Crème Brûlée</div><div class="menu-item-desc" data-key="d5d">Karamelize şeker, vanilyalı krem</div></div>
+        <div class="menu-item-price">₺115</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=600&q=80" alt="Waffle"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name" data-key="d6">Waffle</div><div class="menu-item-desc" data-key="d6d">Nutella, muz, çilek, dondurma</div></div>
+        <div class="menu-item-price">₺135</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRINKS -->
+  <div class="menu-category" id="cat-drinks" style="display:none; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:2rem; max-width:1200px; margin:0 auto;">
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="Kahve"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name" data-key="dr1">Türk Kahvesi</div><div class="menu-item-desc" data-key="dr1d">Geleneksel usul, lokumlu</div></div>
+        <div class="menu-item-price">₺65</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1561882468-9110e03e0f78?w=600&q=80" alt="Latte"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name">Latte</div><div class="menu-item-desc" data-key="dr2d">İtalyan espresso, kremalı süt</div></div>
+        <div class="menu-item-price">₺85</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80" alt="Çay"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name" data-key="dr3">Çay</div><div class="menu-item-desc" data-key="dr3d">Rize demli çay</div></div>
+        <div class="menu-item-price">₺35</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?w=600&q=80" alt="Limonata"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name" data-key="dr4">Ev Limonatası</div><div class="menu-item-desc" data-key="dr4d">Taze sıkılmış, nane ile</div></div>
+        <div class="menu-item-price">₺75</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=600&q=80" alt="Sıcak Çikolata"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name" data-key="dr5">Sıcak Çikolata</div><div class="menu-item-desc" data-key="dr5d">Kremalı, bitter çikolata</div></div>
+        <div class="menu-item-price">₺90</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=80" alt="Cappuccino"></div>
+      <div class="menu-card-body">
+        <div><div class="menu-item-name">Cappuccino</div><div class="menu-item-desc" data-key="dr6d">Espresso, buharla ısıtılmış süt</div></div>
+        <div class="menu-item-price">₺80</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-header reveal">
+    <span class="section-tag" data-key="gallery_tag">Göz Ziyafeti</span>
+    <h2 class="section-title" data-key="gallery_title">Galeri</h2>
+    <div class="section-divider">
+      <div class="divider-line rev"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line"></div>
+    </div>
+    <p class="section-desc" data-key="gallery_desc">Lezzetlerin görsel şöleni.</p>
+  </div>
+  <div class="gallery-grid reveal">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1464195244916-405fa0a82545?w=800&q=80" alt="Kekler">
+      <div class="gallery-overlay"><span class="gallery-label" data-key="gl1">Pastalar</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80" alt="Börek">
+      <div class="gallery-overlay"><span class="gallery-label" data-key="gl2">Börekler</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="Kahve">
+      <div class="gallery-overlay"><span class="gallery-label" data-key="gl3">Kahveler</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80" alt="Tiramisu">
+      <div class="gallery-overlay"><span class="gallery-label" data-key="gl4">Tatlılar</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80" alt="İçecek">
+      <div class="gallery-overlay"><span class="gallery-label" data-key="gl5">İçecekler</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=800&q=80" alt="Kafe İçi">
+      <div class="gallery-overlay"><span class="gallery-label" data-key="gl6">Mekanımız</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="section-header reveal">
+    <span class="section-tag" data-key="reviews_tag">Müşteri Görüşleri</span>
+    <h2 class="section-title" data-key="reviews_title">Sizi Mutlu Etmek Bizi Mutlu Eder</h2>
+    <div class="section-divider">
+      <div class="divider-line rev"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line"></div>
+    </div>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card reveal">
+      <div class="review-quote">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text" data-key="rev1">İstanbul'da gittiğim en güzel pastane. Çikolatalı pasta muhteşemdi, personel çok sıcakkanlı ve mekan çok şık. Kesinlikle tavsiye ederim!</p>
+      <div class="review-author">
+        <img class="reviewer-photo" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ayşe Yıldız">
+        <div>
+          <div class="reviewer-name">Ayşe Yıldız</div>
+          <div class="reviewer-loc">İstanbul, TR · Google</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-quote">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text" data-key="rev2">The cheesecake and tiramisu were absolutely divine. The ambiance is cozy and elegant. A hidden gem in Fatih that I will definitely revisit every time I'm in Istanbul.</p>
+      <div class="review-author">
+        <img class="reviewer-photo" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sarah Mitchell">
+        <div>
+          <div class="reviewer-name">Sarah Mitchell</div>
+          <div class="reviewer-loc">London, UK · TripAdvisor</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-quote">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text" data-key="rev3">مكان رائع بكل المقاييس! الحلويات طازجة ولذيذة جداً، والموظفون ودودون ومرحبون. أجواء مريحة وأناقة تشعر بها من أول لحظة. أنصح به بشدة!</p>
+      <div class="review-author">
+        <img class="reviewer-photo" src="https://randomuser.me/api/portraits/men/32.jpg" alt="محمد الأحمد">
+        <div>
+          <div class="reviewer-name">محمد الأحمد</div>
+          <div class="reviewer-loc">Riyadh, SA · Google</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-quote">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text" data-key="rev4">Arkadaşımla gittiğimizde börekler taze fırından çıkmıştı. Peynirli börek inanılmaz lezzetliydi. Çayı da çok güzeldi. Her hafta sonu uğramak istiyorum!</p>
+      <div class="review-author">
+        <img class="reviewer-photo" src="https://randomuser.me/api/portraits/men/56.jpg" alt="Mehmet Kara">
+        <div>
+          <div class="reviewer-name">Mehmet Kara</div>
+          <div class="reviewer-loc">İstanbul, TR · Instagram</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-quote">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text" data-key="rev5">Ich war zufällig in der Nähe und habe dieses wunderbare Café entdeckt. Der Tiramisu war der beste, den ich je gegessen habe. Das Personal war sehr freundlich und hilfsbereit!</p>
+      <div class="review-author">
+        <img class="reviewer-photo" src="https://randomuser.me/api/portraits/women/22.jpg" alt="Lena Bauer">
+        <div>
+          <div class="reviewer-name">Lena Bauer</div>
+          <div class="reviewer-loc">Berlin, DE · Google</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-quote">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text" data-key="rev6">Fatih'te bu kadar kaliteli bir pastane bulmak gerçekten sürpriz oldu. Cheesecake dışarıdan bakınca mütevazı ama içine girince atmosfer ve lezzet sizi büyülüyor. Çok özel bir mekan!</p>
+      <div class="review-author">
+        <img class="reviewer-photo" src="https://randomuser.me/api/portraits/women/76.jpg" alt="Zeynep Arslan">
+        <div>
+          <div class="reviewer-name">Zeynep Arslan</div>
+          <div class="reviewer-loc">İstanbul, TR · Google</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOURS -->
+<div class="hours-section">
+  <div class="section-header reveal" style="margin-bottom:2.5rem;">
+    <span class="section-tag" data-key="hours_tag">Ziyaret Saatleri</span>
+    <h2 class="section-title" data-key="hours_title">Çalışma Saatlerimiz</h2>
+    <div class="section-divider">
+      <div class="divider-line rev"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line"></div>
+    </div>
+  </div>
+  <div class="hours-inner reveal">
+    <div class="hours-card">
+      <div class="hours-day" data-key="hours_weekdays">Pazartesi – Cuma</div>
+      <div class="hours-time">08:00 – 21:00</div>
+      <div class="hours-note" data-key="hours_open">Açık</div>
+    </div>
+    <div class="hours-card">
+      <div class="hours-day" data-key="hours_weekend">Cumartesi – Pazar</div>
+      <div class="hours-time">09:00 – 22:00</div>
+      <div class="hours-note" data-key="hours_open2">Açık</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header reveal">
+    <span class="section-tag" data-key="contact_tag">Bize Ulaşın</span>
+    <h2 class="section-title" data-key="contact_title">İletişim</h2>
+    <div class="section-divider">
+      <div class="divider-line rev"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line"></div>
+    </div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-item-label" data-key="addr_label">Adres</div>
+          <div class="contact-item-value">Kıztaşı, İskenderpaşa, Dolap Cd. No:11,<br>Fatih / İstanbul</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-item-label" data-key="phone_label">Telefon</div>
+          <a href="tel:+905444822254" class="contact-item-value">+90 544 482 22 54</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-item-label">Instagram</div>
+          <a href="https://www.instagram.com/untasi__patisserie" target="_blank" rel="noopener" class="contact-item-value">@untasi__patisserie</a>
+        </div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Dolap+Cd.+No:11,+Fatih,+Istanbul" target="_blank" rel="noopener" class="map-link-block" aria-label="Google Maps'te Yol Tarifi Al">
+        <div class="map-preview">
+          <img src="https://maps.googleapis.com/maps/api/staticmap?center=41.0145,28.9482&zoom=16&size=600x220&scale=2&markers=color:0xC9A84C%7C41.0145,28.9482&style=element:geometry%7Ccolor:0xf5f0e8&style=element:labels.text.fill%7Ccolor:0x6B4F32&key=AIzaSyD-placeholder" 
+               onerror="this.style.display='none'; this.parentElement.classList.add('map-fallback');"
+               alt="Harita" style="width:100%; height:100%; object-fit:cover; display:block;">
+          <div class="map-overlay-btn">
+            <span>📍</span>
+            <span data-key="map_directions">Yol Tarifi Al →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+      </form>
+      <div class="form-success" id="formSuccess" data-key="form_success">
+        Mesajınız için teşekkür ederiz! En kısa sürede size dönüş yapacağız. 🥐
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Berceste Patisserie & Cafe</div>
+        <div class="footer-brand-sub">Kıztaşı, İstanbul</div>
+        <p class="footer-desc" data-key="footer_desc">İstanbul'un kalbinde, her lokması özenle hazırlanmış lezzetler ve sıcak bir atmosfer.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/untasi__patisserie" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/905444822254" target="_blank" rel="noopener" class="footer-social-link" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title" data-key="footer_links_title">Sayfalar</div>
+        <ul class="footer-links">
+          <li><a href="#home" data-key="nav_home">Ana Sayfa</a></li>
+          <li><a href="#about" data-key="nav_about">Hakkımızda</a></li>
+          <li><a href="#menu" data-key="nav_menu">Menü</a></li>
+          <li><a href="#gallery" data-key="nav_gallery">Galeri</a></li>
+          <li><a href="#contact" data-key="nav_contact">İletişim</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title" data-key="footer_contact_title">İletişim</div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📍</span>
+          <span>Dolap Cd. No:11, Fatih/İstanbul</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📞</span>
+          <a href="tel:+905444822254" style="color:inherit; text-decoration:none;">+90 544 482 22 54</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">🕐</span>
+          <span data-key="footer_hours">Hft içi: 08:00–21:00<br>Hft sonu: 09:00–22:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Berceste Patisserie & Cafe. <span data-key="footer_rights">Tüm hakları saklıdır.</span></span>
+      <span><a href="https://www.instagram.com/untasi__patisserie" target="_blank" rel="noopener">@untasi__patisserie</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/905444822254" target="_blank" rel="noopener" class="whatsapp-btn" aria-label="WhatsApp ile İletişim">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+// ===== TRANSLATIONS =====
+const translations = {
+  tr: {
+    nav_home: "Ana Sayfa", nav_about: "Hakkımızda", nav_menu: "Menü", nav_gallery: "Galeri", nav_contact: "İletişim",
+    hero_badge: "İstanbul, Fatih", hero_subtitle: "Kıztaşı Patisserie & Cafe",
+    hero_slogan: '<span>✦</span> Taze <span>•</span> Zarif <span>•</span> Lezzetli <span>✦</span>',
+    btn_menu: "Menüyü Gör", btn_contact: "İletişim",
+    badge_since: "den beri",
+    about_tag: "Hikayemiz", about_title: "Sevgiyle Pişirilen Her Şey",
+    about_p1: "İstanbul'un tarihi Fatih ilçesinde, Kıztaşı'nın büyülü atmosferinde doğan Berceste Patisserie & Cafe, 2019 yılından bu yana misafirlerine taze, özenle hazırlanmış lezzetler sunmaktadır.",
+    about_p2: "Her pasta, her börek, her içecek; taze ve kaliteli malzemelerle, ustanın elleriyle ve içten bir sevgiyle hazırlanmaktadır. Sıcak ortamımızda kendinizi evinizde hissedeceğiniz bir mekân yaratmak için çalışıyoruz.",
+    feat1_title: "Taze Malzeme", feat1_desc: "Her gün taze ürünler",
+    feat2_title: "Usta Eller", feat2_desc: "Deneyimli pastacılar",
+    feat3_title: "Samimi Hizmet", feat3_desc: "Sıcak ve dost canlısı",
+    feat4_title: "Premium Kalite", feat4_desc: "En yüksek standartlar",
+    menu_tag: "Lezzetlerimiz", menu_title: "Menümüz", menu_desc: "Her lokmada bir hikaye, her yudumda bir an.",
+    tab_cakes: "Pastalar", tab_pastries: "Börek & Poğaça", tab_desserts: "Tatlılar", tab_drinks: "İçecekler",
+    cake1: "Çikolatalı Ganache Pasta", cake1d: "Koyu çikolata krem ile", cake2: "Çilek Tart", cake2d: "Taze çilek ve vanilyalı krem",
+    cake3: "Magnolia Cheesecake", cake3d: "Baked cheesecake, yaban mersini", cake4: "Limon Kremalı Pasta", cake4d: "Hafif ve ferahlatıcı",
+    p1: "Peynirli Börek", p1d: "Ev yapımı yufka, taze beyaz peynir", p2: "Kıymalı Poğaça", p2d: "Fırından taze çıkmış",
+    p3: "Ispanaklı Börek", p3d: "Taze ıspanak ve lor peyniri", p4: "Zeytinli Poğaça", p4d: "Siyah zeytin ve susam",
+    d1d: "Maskarpone & espresso", d2d: "Çikolata soslu, dondurmalı", d3d: "Antep fıstığı, tereyağı", d4d: "Çilek soslu, vanilya kremalı",
+    dr1: "Türk Kahvesi", dr1d: "Geleneksel usul, lokumlu", dr2d: "İtalyan espresso, kremalı süt", dr3: "Çay", dr3d: "Rize demli çay", dr4: "Ev Limonatası", dr4d: "Taze sıkılmış, nane ile",
+    gallery_tag: "Göz Ziyafeti", gallery_title: "Galeri", gallery_desc: "Lezzetlerin görsel şöleni.",
+    gl1: "Pastalar", gl2: "Börekler", gl3: "Kahveler", gl4: "Tatlılar", gl5: "İçecekler", gl6: "Mekanımız",
+    reviews_tag: "Müşteri Görüşleri", reviews_title: "Sizi Mutlu Etmek Bizi Mutlu Eder",
+    rev4: "Arkadaşımla gittiğimizde börekler taze fırından çıkmıştı. Peynirli börek inanılmaz lezzetliydi. Çayı da çok güzeldi. Her hafta sonu uğramak istiyorum!",
+    rev5: "Zufällig entdeckt und absolut begeistert! Der Tiramisu war der beste, den ich je gegessen habe. Das Personal war sehr freundlich!",
+    rev6: "Fatih'te bu kadar kaliteli bir pastane bulmak sürpriz oldu. Cheesecake ve atmosfer sizi büyülüyor. Çok özel bir mekan!",
+    cake5: "Red Velvet Pasta", cake5d: "Cream cheese frosting ile", cake6: "Frambuazlı Mousse", cake6d: "Hafif mousse, taze frambuaz",
+    p5: "Patatesli Börek", p5d: "Baharatlı patates, taze nane", p6: "Sigara Böreği (6'lı)", p6d: "Çıtır yufka, peynir dolgulu",
+    d5d: "Karamelize şeker, vanilyalı krem", d6: "Waffle", d6d: "Nutella, muz, çilek, dondurma",
+    dr5: "Sıcak Çikolata", dr5d: "Kremalı, bitter çikolata", dr6d: "Espresso, buharla ısıtılmış süt",
+    map_directions: "Yol Tarifi Al →",
+    hours_tag: "Ziyaret Saatleri", hours_title: "Çalışma Saatlerimiz",
+    hours_weekdays: "Pazartesi – Cuma", hours_weekend: "Cumartesi – Pazar", hours_open: "Açık", hours_open2: "Açık",
+    contact_tag: "Bize Ulaşın", contact_title: "İletişim",
+    addr_label: "Adres", phone_label: "Telefon",
+    form_name: "Adınız", form_email: "E-posta", form_msg: "Mesajınız", form_send: "Mesaj Gönder",
+    form_success: "Mesajınız için teşekkür ederiz! En kısa sürede size dönüş yapacağız. 🥐",
+    footer_desc: "İstanbul'un kalbinde, her lokması özenle hazırlanmış lezzetler ve sıcak bir atmosfer.",
+    footer_links_title: "Sayfalar", footer_contact_title: "İletişim",
+    footer_hours: "Hft içi: 08:00–21:00<br>Hft sonu: 09:00–22:00",
+    footer_rights: "Tüm hakları saklıdır."
+  },
+  en: {
+    nav_home: "Home", nav_about: "About", nav_menu: "Menu", nav_gallery: "Gallery", nav_contact: "Contact",
+    hero_badge: "Istanbul, Fatih", hero_subtitle: "Kıztaşı Patisserie & Cafe",
+    hero_slogan: '<span>✦</span> Fresh <span>•</span> Elegant <span>•</span> Delicious <span>✦</span>',
+    btn_menu: "View Menu", btn_contact: "Contact Us",
+    badge_since: "since",
+    about_tag: "Our Story", about_title: "Everything Baked with Love",
+    about_p1: "Born in the enchanting atmosphere of Kıztaşı in Istanbul's historic Fatih district, Berceste Patisserie & Cafe has been serving guests fresh, carefully crafted delicacies since 2019.",
+    about_p2: "Every cake, every pastry, every drink is prepared with fresh, quality ingredients, skilled hands, and genuine love. We strive to create a space where you feel right at home.",
+    feat1_title: "Fresh Ingredients", feat1_desc: "Fresh products every day",
+    feat2_title: "Master Hands", feat2_desc: "Experienced pastry chefs",
+    feat3_title: "Warm Service", feat3_desc: "Friendly & welcoming",
+    feat4_title: "Premium Quality", feat4_desc: "Highest standards",
+    menu_tag: "Our Flavors", menu_title: "Menu", menu_desc: "A story in every bite, a moment in every sip.",
+    tab_cakes: "Cakes", tab_pastries: "Börek & Poğaça", tab_desserts: "Desserts", tab_drinks: "Drinks",
+    cake1: "Chocolate Ganache Cake", cake1d: "Dark chocolate cream", cake2: "Strawberry Tart", cake2d: "Fresh strawberry & vanilla cream",
+    cake3: "Magnolia Cheesecake", cake3d: "Baked cheesecake, blueberry", cake4: "Lemon Cream Cake", cake4d: "Light and refreshing",
+    p1: "Cheese Börek", p1d: "Homemade phyllo, fresh white cheese", p2: "Minced Meat Poğaça", p2d: "Fresh from the oven",
+    p3: "Spinach Börek", p3d: "Fresh spinach and cottage cheese", p4: "Olive Poğaça", p4d: "Black olive and sesame",
+    d1d: "Mascarpone & espresso", d2d: "Chocolate sauce, ice cream", d3d: "Pistachio, butter", d4d: "Strawberry sauce, vanilla cream",
+    dr1: "Turkish Coffee", dr1d: "Traditional style, with lokum", dr2d: "Italian espresso, creamy milk", dr3: "Tea", dr3d: "Rize brewed tea", dr4: "Homemade Lemonade", dr4d: "Freshly squeezed, with mint",
+    gallery_tag: "Visual Feast", gallery_title: "Gallery", gallery_desc: "A visual feast of flavors.",
+    gl1: "Cakes", gl2: "Pastries", gl3: "Coffees", gl4: "Desserts", gl5: "Drinks", gl6: "Our Space",
+    reviews_tag: "Customer Reviews", reviews_title: "Making You Happy Makes Us Happy",
+    rev4: "When we went with my friend the pastries had just come out of the oven. The cheese börek was incredibly delicious. The tea was great too. Want to come every weekend!",
+    rev5: "Discovered by chance and absolutely delighted! The tiramisu was the best I've ever had. The staff was very friendly and welcoming!",
+    rev6: "Finding such a quality patisserie in Fatih was a pleasant surprise. The cheesecake and atmosphere are enchanting. A very special place!",
+    cake5: "Red Velvet Cake", cake5d: "With cream cheese frosting", cake6: "Raspberry Mousse", cake6d: "Light mousse, fresh raspberries",
+    p5: "Potato Börek", p5d: "Spiced potato, fresh mint", p6: "Sigara Böreği (6 pcs)", p6d: "Crispy phyllo, cheese filling",
+    d5d: "Caramelized sugar, vanilla cream", d6: "Waffle", d6d: "Nutella, banana, strawberry, ice cream",
+    dr5: "Hot Chocolate", dr5d: "Creamy, dark chocolate", dr6d: "Espresso, steamed milk",
+    map_directions: "Get Directions →",
+    hours_tag: "Visit Hours", hours_title: "Opening Hours",
+    hours_weekdays: "Monday – Friday", hours_weekend: "Saturday – Sunday", hours_open: "Open", hours_open2: "Open",
+    contact_tag: "Get In Touch", contact_title: "Contact",
+    addr_label: "Address", phone_label: "Phone",
+    form_name: "Your Name", form_email: "Email", form_msg: "Your Message", form_send: "Send Message",
+    form_success: "Thank you for your message! We'll get back to you soon. 🥐",
+    footer_desc: "In the heart of Istanbul — carefully crafted flavors and a warm atmosphere in every bite.",
+    footer_links_title: "Pages", footer_contact_title: "Contact",
+    footer_hours: "Weekdays: 08:00–21:00<br>Weekends: 09:00–22:00",
+    footer_rights: "All rights reserved."
+  },
+  ar: {
+    nav_home: "الرئيسية", nav_about: "من نحن", nav_menu: "القائمة", nav_gallery: "معرض الصور", nav_contact: "اتصل بنا",
+    hero_badge: "إسطنبول، الفاتح", hero_subtitle: "Kıztaşı Patisserie & Cafe",
+    hero_slogan: '<span>✦</span> طازج <span>•</span> أنيق <span>•</span> لذيذ <span>✦</span>',
+    btn_menu: "عرض القائمة", btn_contact: "اتصل بنا",
+    badge_since: "منذ",
+    about_tag: "قصتنا", about_title: "كل شيء يُعدّ بحبّ",
+    about_p1: "وُلد مقهى ومحل حلويات بيرجيستي في أجواء الساحرة لمنطقة كيزطاشي في حي الفاتح التاريخي بإسطنبول، ويقدم لضيوفه منذ عام 2019 لذائذ طازجة ومُعدّة بعناية.",
+    about_p2: "كل كعكة، كل معجنات، كل مشروب يُحضَّر بمكونات طازجة وعالية الجودة، وبأيدٍ ماهرة، وبحب حقيقي. نسعى لخلق مكان تشعر فيه بالراحة كما في بيتك.",
+    feat1_title: "مكونات طازجة", feat1_desc: "منتجات طازجة يومياً",
+    feat2_title: "أيدٍ ماهرة", feat2_desc: "طهاة معجنات ذوو خبرة",
+    feat3_title: "خدمة دافئة", feat3_desc: "ودود وترحيبي",
+    feat4_title: "جودة متميزة", feat4_desc: "أعلى المعايير",
+    menu_tag: "أطباقنا", menu_title: "القائمة", menu_desc: "قصة في كل لقمة، لحظة في كل رشفة.",
+    tab_cakes: "الكعكات", tab_pastries: "البورك والبوغاتشا", tab_desserts: "الحلويات", tab_drinks: "المشروبات",
+    cake1: "كعكة الشوكولاتة", cake1d: "كريمة شوكولاتة داكنة", cake2: "تارت الفراولة", cake2d: "فراولة طازجة وكريمة فانيليا",
+    cake3: "تشيزكيك ماغنوليا", cake3d: "تشيزكيك مخبوز، توت بري", cake4: "كعكة كريمة الليمون", cake4d: "خفيفة ومنعشة",
+    p1: "بورك بالجبن", p1d: "عجين منزلي، جبن طازج", p2: "بوغاتشا باللحم", p2d: "طازجة من الفرن",
+    p3: "بورك السبانخ", p3d: "سبانخ طازج وجبن", p4: "بوغاتشا بالزيتون", p4d: "زيتون أسود وسمسم",
+    d1d: "ماسكاربوني وإسبريسو", d2d: "صلصة شوكولاتة وآيس كريم", d3d: "فستق حلبي وزبدة", d4d: "صلصة فراولة وكريمة فانيليا",
+    dr1: "قهوة تركية", dr1d: "الطريقة التقليدية مع لوكوم", dr2d: "إسبريسو إيطالي وحليب كريمي", dr3: "شاي", dr3d: "شاي ريزه المُخمَّر", dr4: "ليمونادة منزلية", dr4d: "طازجة ومع النعناع",
+    gallery_tag: "وليمة بصرية", gallery_title: "معرض الصور", gallery_desc: "وليمة بصرية من اللذائذ.",
+    gl1: "الكعكات", gl2: "المعجنات", gl3: "القهوة", gl4: "الحلويات", gl5: "المشروبات", gl6: "مكاننا",
+    reviews_tag: "آراء العملاء", reviews_title: "سعادتكم تسعدنا",
+    rev4: "عندما ذهبنا مع صديقي كانت المعجنات قد خرجت للتو من الفرن. كان بورك الجبن لذيذاً بشكل لا يصدق. الشاي كان رائعاً أيضاً!",
+    rev5: "اكتشفته بالصدفة وأنا مبهور تماماً! التيراميسو كان أفضل ما تذوقته في حياتي. الموظفون ودودون جداً!",
+    rev6: "إيجاد محل حلويات بهذا المستوى في الفاتح كان مفاجأة سارة. التشيزكيك والأجواء تسحر القلوب. مكان مميز جداً!",
+    cake5: "كعكة ريد فيلفيت", cake5d: "مع كريمة الجبن", cake6: "موس التوت", cake6d: "موس خفيف، توت طازج",
+    p5: "بورك البطاطا", p5d: "بطاطا متبلة ونعناع طازج", p6: "سيغارا بوريغي (6 قطع)", p6d: "عجين مقرمش بالجبن",
+    d5d: "سكر كراميل، كريمة فانيليا", d6: "وافل", d6d: "نوتيلا، موز، فراولة، آيس كريم",
+    dr5: "شوكولاتة ساخنة", dr5d: "كريمية، شوكولاتة داكنة", dr6d: "إسبريسو وحليب مبخر",
+    map_directions: "الحصول على الاتجاهات →",
+    hours_tag: "أوقات الزيارة", hours_title: "ساعات العمل",
+    hours_weekdays: "الاثنين – الجمعة", hours_weekend: "السبت – الأحد", hours_open: "مفتوح", hours_open2: "مفتوح",
+    contact_tag: "تواصل معنا", contact_title: "اتصل بنا",
+    addr_label: "العنوان", phone_label: "الهاتف",
+    form_name: "اسمك", form_email: "البريد الإلكتروني", form_msg: "رسالتك", form_send: "إرسال الرسالة",
+    form_success: "شكراً على رسالتك! سنرد عليك في أقرب وقت. 🥐",
+    footer_desc: "في قلب إسطنبول – لذائذ مُعدَّة بعناية وأجواء دافئة في كل لقمة.",
+    footer_links_title: "الصفحات", footer_contact_title: "تواصل معنا",
+    footer_hours: "أيام الأسبوع: 08:00–21:00<br>عطلة نهاية الأسبوع: 09:00–22:00",
+    footer_rights: "جميع الحقوق محفوظة."
+  }
+};
+
+let currentLang = 'tr';
+
+function setLang(lang) {
+  currentLang = lang;
+  const t = translations[lang];
+  const isRTL = lang === 'ar';
+
+  document.documentElement.lang = lang;
+  document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+
+  document.querySelectorAll('[data-key]').forEach(el => {
+    const key = el.getAttribute('data-key');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.textContent.trim().toLowerCase() === lang) btn.classList.add('active');
+  });
+}
+
+// ===== HERO SLIDER =====
+let currentSlide = 0;
+const slides = document.querySelectorAll('.hero-slide');
+const dots = document.querySelectorAll('.hero-dot');
+let sliderInterval;
+
+function goSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+  currentSlide = (n + slides.length) % slides.length;
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+  resetInterval();
+}
+
+function changeSlide(dir) { goSlide(currentSlide + dir); }
+
+function resetInterval() {
+  clearInterval(sliderInterval);
+  sliderInterval = setInterval(() => goSlide(currentSlide + 1), 5000);
+}
+
+sliderInterval = setInterval(() => goSlide(currentSlide + 1), 5000);
+
+
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// ===== HAMBURGER =====
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+
+function closeMobile() { mobileMenu.classList.remove('open'); }
+
+// ===== MENU TABS =====
+function switchTab(cat) {
+  document.querySelectorAll('.menu-tab').forEach((t, i) => {
+    const cats = ['cakes', 'pastries', 'desserts', 'drinks'];
+    t.classList.toggle('active', cats[i] === cat);
+  });
+  document.querySelectorAll('.menu-category').forEach(c => {
+    c.style.display = 'none';
+  });
+  const el = document.getElementById('cat-' + cat);
+  if (el) el.style.display = 'grid';
+}
+
+// ===== SCROLL REVEAL =====
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ===== CONTACT FORM =====
+function submitForm(e) {
+  e.preventDefault();
+  const t = translations[currentLang];
+  document.getElementById('contactForm').style.display = 'none';
+  const succ = document.getElementById('formSuccess');
+  succ.innerHTML = t.form_success;
+  succ.style.display = 'block';
+}
+
+// ===== ACTIVE NAV LINK =====
+const sections = document.querySelectorAll('section[id], div.hours-section');
+window.addEventListener('scroll', () => {
+  let current = '';
+  document.querySelectorAll('section[id]').forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  document.querySelectorAll('.nav-link').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+</script>
+</body>
+</html>
